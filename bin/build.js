@@ -88,7 +88,7 @@ const VmRoot = options['vm'] ?
 console.log(`vm = ${VmRoot}`);
 const outputDir = path.resolve(process.cwd(), options['output']);
 console.log(`output = ${outputDir}`);
-fs.emptyDirSync(outputDir);
+fs.ensureDirSync(outputDir);
 
 const blockWorkingDir = path.resolve(VmRoot, `src/extensions/_${moduleName}`);
 const blockFile = path.resolve(blockWorkingDir, 'index.js');
